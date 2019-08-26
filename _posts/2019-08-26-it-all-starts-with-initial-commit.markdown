@@ -1,8 +1,10 @@
 ---
 layout: post
 title:  "It all starts with 'Initial Commit'"
+author: rem kim
 date:   2019-08-26 00:24:33 -0400
-categories: blog
+categories: [blog, dev]
+tags: [blog, jekyll, netlify, github, personal, content, guide] 
 ---
 
 <pre>git commit -m 'initial commit'</pre>
@@ -34,7 +36,7 @@ Every big project once started with "Initial Commit". This is the moment when so
 </p>
 
 <p class="content">
-  I knew some things for sure. I didn't want this to become pain in the ass to setup. So after a quick google search I found out that there are ways to host your blog on github, manage content as a static html and deploy with simple push to master branch.
+  I knew some things for sure. I didn't want this to become pain in the ass to setup. So after a quick google search I found out that there are ways to host your blog on github, manage content as a static html and deploy with simple push to master branch. 
 </p>
 
 Here is a list of tools I decided to use:
