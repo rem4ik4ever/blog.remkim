@@ -1,0 +1,29 @@
+---
+layout: default
+---
+<div class="section">
+  {% include content.html %}
+</div>
+<div class="columns is-centered">
+  <div class="column is-half">
+    <div class="container box is-fluid">
+      {% for post in site.posts %}
+        <article>
+          <h2>
+            <a href="{{ post.url }}">
+              <h1 class="title is-4">{{ post.title }}</h1>
+            </a>
+          </h2>
+          <h4 class="subtitle is-7">  <time datetime="{{ post.date | date: '%Y-%m-%d' }}">{{ post.date | date_to_long_string }}</time></h4>
+          {% if post.content.size > 500 %}
+            {{ post.content | truncatewords: 50 }} <!-- bad! content gives you rendered html and you will truncate in the middle of a node -->
+            <a href="{{ post.url }}">read more</a>
+          {% else %}
+              {{ post.content }}
+          {% endif %}
+        </article>
+      {% endfor %}
+    </div>
+  </div>
+</div>
+{% include footer.html %}
