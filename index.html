@@ -1,43 +1,49 @@
 ---
 layout: default
 ---
+
 <div class="section" style="background-color: darkcyan;">
   <div class="conatiner has-text-centered">
     <div class="block">
       <figure class="image is-128x128" style="display: inline-block;">
-        <img src="/assets/img/rem-square.png" alt="rem" class="is-rounded"> 
+        <img src="/assets/img/rem-square.png" alt="rem" class="is-rounded" />
       </figure>
       <div class="block has-text-white">
-      <p>Hi! My name is Rem. I'm a Software Developer.</p>
-      <p>Like every other programmer I'm a problem solver. </p>
-      <p>With this blog I would like to share my experience.</p>
+        <p>Hi! My name is Rem. I'm a Software Developer.</p>
+        <p>Like every other programmer I'm a problem solver.</p>
+        <p>With this blog I would like to share my experience.</p>
         <p>I hope you find something interesting along the way!</p>
       </div>
     </div>
   </div>
-  </div>
-  <div class="section">
-    <div class="columns is-centered">
-      <div class="column is-half">
-        <div class="container box is-fluid">
-          {% for post in site.posts %}
-            <article>
-              <h2>
-                <a href="{{ post.url }}">
-                  <h1 class="title is-4">{{ post.title }}</h1>
-                </a>
-              </h2>
-              <h4 class="subtitle is-7">  <time datetime="{{ post.date | date: '%Y-%m-%d' }}">{{ post.date | date_to_long_string }}</time></h4>
-              {% if post.content.size > 500 %}
-                {{ post.content | truncatewords: 50 }} <!-- bad! content gives you rendered html and you will truncate in the middle of a node -->
-                <a href="{{ post.url }}">read more</a>
-              {% else %}
-                  {{ post.content }}
-              {% endif %}
-            </article>
-          {% endfor %}
-        </div>
+</div>
+<div class="section">
+  <div class="columns is-centered">
+    <div class="column is-half">
+      {% for post in site.posts %}
+      <div class="container box is-fluid">
+        <article>
+          <h2>
+            <a href="{{ post.url }}">
+              <h1 class="title is-4">{{ post.title }}</h1>
+            </a>
+          </h2>
+          <h4 class="subtitle is-7">
+            <time datetime="{{ post.date | date: '%Y-%m-%d' }}">{{
+              post.date | date_to_long_string
+            }}</time>
+          </h4>
+          {% if post.content.size > 500 %}
+          {{ post.content | truncatewords: 50 }}
+          <!-- bad! content gives you rendered html and you will truncate in the middle of a node -->
+          <a href="{{ post.url }}">read more</a>
+          {% else %}
+          {{ post.content }}
+          {% endif %}
+        </article>
       </div>
+      {% endfor %}
     </div>
   </div>
-  {% include footer.html %}
+</div>
+{% include footer.html %}
