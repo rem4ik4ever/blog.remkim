@@ -16,6 +16,7 @@ tags:
     project,
     startup,
     idea,
+    russian,
   ]
 ---
 
