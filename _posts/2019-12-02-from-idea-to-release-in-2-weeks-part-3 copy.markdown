@@ -9,7 +9,7 @@ tags:
     blog,
     netlify,
     serverless,
-    netxtjs,
+    nextjs,
     firebase,
     faunadb,
     github,
